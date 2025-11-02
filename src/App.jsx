@@ -27,7 +27,7 @@ function App() {
 
         {/* Dedicated pages */}
         <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/booknow" element={<BookNow />} />
+       <Route path="/booknow" element={<BookNow />} />
         <Route path="/gallery/:category" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
