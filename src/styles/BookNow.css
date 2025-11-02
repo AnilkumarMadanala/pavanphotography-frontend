@@ -1,0 +1,55 @@
+.booknow-container {
+  min-height: 100vh;
+  background-color: #2e3944;
+  color: #d3d9d4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.booknow-content {
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  background: #212a31;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.booknow-content h1 {
+  color: #d3d9d4;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.booknow-content p {
+  color: #d3d9d4;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.form-container iframe {
+  border-radius: 12px;
+  background: #fff;
+}
+
+/* ✅ Mobile Responsive */
+@media (max-width: 768px) {
+  .booknow-content {
+    padding: 20px;
+  }
+
+  .booknow-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .booknow-content p {
+    font-size: 0.95rem;
+  }
+
+  .form-container iframe {
+    height: 500px;
+  }
+}

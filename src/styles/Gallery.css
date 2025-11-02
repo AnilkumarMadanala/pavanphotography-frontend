@@ -1,0 +1,50 @@
+/* Common Gallery Layout */
+.gallery-container {
+  padding: 30px;
+  background: #000;
+  color: white;
+  text-align: center;
+}
+
+.gallery-title {
+  font-size: 2rem;
+  color: #ff5722;
+  margin-bottom: 25px;
+}
+
+/* Image Grid (default layout for all categories like wedding) */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.image-card {
+  overflow: hidden;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.image-card:hover img {
+  transform: scale(1.05);
+}
+
+/* ✅ Bigger layout only for House Warming section */
+.gallery-container.housewarming .image-grid {
+  grid-template-columns: repeat(4, 1fr); /* 4 images per row */
+  gap: 25px;
+}
+
+.gallery-container.housewarming .image-card img {
+  height: 280px; /* make them larger */
+  object-fit: cover;
+}

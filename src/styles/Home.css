@@ -1,0 +1,349 @@
+/* ==============================
+   HOME WRAPPER
+============================== */
+.home-wrapper {
+  display: flex;
+  flex-direction: column;
+ 
+  width: 100%;
+}
+
+/* ==============================
+   HERO VIDEO SECTION
+============================== */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.overlay {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: #fff;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 20px;
+}
+
+.overlay h1 {
+  font-size: 3rem;
+  color: #ff6600;
+  margin-bottom: 10px;
+}
+
+.overlay p {
+  font-size: 1.3rem;
+  color: #f1f1f1;
+}
+
+/* ==============================
+   ABOUT US SECTION
+============================== */
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #000;
+  color: white;
+  padding: 60px 20px;
+  gap: 40px;
+  height: 50vh;
+}
+
+.about-left img {
+  width: 350px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.about-right {
+  max-width: 600px;
+  text-align: left;
+}
+
+.about-right h1 {
+  color: #ff6600;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about-right p {
+  color: #ddd;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.book-now-btn {
+  background-color: #ff6600;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.book-now-btn:hover {
+  background-color: #e65c00;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-left img {
+    width: 80%;
+  }
+
+  .about-right {
+    text-align: center;
+  }
+}
+
+/* ==============================
+   GALLERY SECTION
+============================== */
+.gallery-section,
+.home-gallery-section {
+  background-color: #000;
+  color: #fff;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.gallery-section h2,
+.home-gallery-section h2 {
+  font-size: 2rem;
+  color: #ff6600;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Uniform Grid */
+.gallery-grid,
+.home-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* ✅ 4 images per row */
+  gap: 25px;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Image Style */
+.gallery-grid img,
+.home-gallery img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+.gallery-grid img:hover,
+.home-gallery img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.25);
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+  .gallery-grid,
+  .home-gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .gallery-grid img,
+  .home-gallery img {
+    height: 220px;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .gallery-grid,
+  .home-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .gallery-grid img,
+  .home-gallery img {
+    height: 160px;
+  }
+
+  .gallery-section h2,
+  .home-gallery-section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* ==============================
+   HAPPY CUSTOMERS / REVIEWS
+============================== */
+/* ===============================
+   OUR HAPPY CUSTOMERS SECTION
+=============================== */
+.reviews-section {
+  background-color: #2e3944;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  border-top: 2px solid #222;
+  border-bottom: 2px solid #222;
+  margin-top: 0;
+  width: 1480px;
+}
+
+.reviews-section h2 {
+  color: #ff6600;
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.reviews-subtitle {
+  color: #bbb;
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+}
+
+/* ===============================
+   STATS (Events, Clients, Experience)
+=============================== */
+.stats-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.stat-box {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 25px 40px;
+  transition: all 0.3s ease;
+  width: 220px;
+}
+
+.stat-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 15px rgba(255, 102, 0, 0.3);
+}
+
+.stat-box h3 {
+  color: #ff6600;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.stat-box p {
+  color: #ccc;
+  font-size: 1rem;
+}
+
+/* ===============================
+   CLIENT REVIEWS
+=============================== */
+.reviews-heading {
+  color: #ff6600;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.reviews-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+}
+
+.review-card {
+  background-color: #121212;
+  border: 1px solid #333;
+  padding: 25px 20px;
+  border-radius: 12px;
+  width: 320px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 102, 0, 0.3);
+}
+
+.review-card p {
+  font-size: 1rem;
+  font-style: italic;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.review-card h4 {
+  color: #ff6600;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+@media (max-width: 768px) {
+  .stats-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .reviews-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .review-card {
+    width: 90%;
+  }
+}
+
+

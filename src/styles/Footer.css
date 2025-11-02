@@ -1,0 +1,142 @@
+.footer {
+  position: relative; /* important for positioning */
+}
+
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+  text-align: left;
+}
+
+.footer-brand h2 {
+  font-size: 24px;
+  color: #f5b700;
+  margin-bottom: 8px;
+}
+
+.footer-brand p {
+  font-size: 15px;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.footer-contact p {
+  font-size: 14px;
+  color: #ddd;
+  margin: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.footer-icon {
+  color: #f5b700;
+  font-size: 16px;
+}
+
+.footer-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 60px;
+  right: 140px;
+  gap: 10px;
+}
+
+.footer-btn {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 25px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  width: 130px;
+  text-align: center;
+}
+
+.book-btn {
+  background-color: #f5b700;
+  color: #000;
+}
+
+.book-btn:hover {
+  background-color: #fff;
+  transform: scale(1.05);
+}
+
+.call-btn {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.call-btn:hover {
+  background-color: #2ecc71;
+  transform: scale(1.05);
+}
+
+.footer-links h3,
+.footer-social h3 {
+  color: #f5b700;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin: 6px 0;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #f5b700;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 22px;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #f5b700;
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  border-top: 1px solid #333;
+  text-align: center;
+  margin-top: 25px;
+  padding-top: 15px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+@media (max-width: 768px) {
+  .footer-buttons {
+    position: static;
+    align-items: center;
+    margin-top: 15px;
+  }
+  
+
+ 
+}
