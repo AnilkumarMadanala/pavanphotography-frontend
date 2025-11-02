@@ -76,30 +76,89 @@
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .book-now-btn:hover {
   background-color: #ff5722;
+  transform: translateY(-2px);
+}
+
+/* ✅ Responsive (Tablets and below) */
+@media (max-width: 1024px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 40px;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .about-right {
+    max-width: 90%;
+  }
+
+  .about-right h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-right p {
+    font-size: 1rem;
+  }
+
+  .book-now-btn {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+  }
 }
 
 /* ✅ Responsive (Mobile) */
 @media (max-width: 768px) {
   .about-container {
     flex-direction: column;
-    padding: 40px 20px;
+    padding: 30px 15px;
     text-align: center;
+    min-height: auto;
   }
 
   .about-left img {
-    max-width: 90%;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 10px;
   }
 
   .about-right h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .about-right p {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .book-now-btn {
+    width: 80%;
+    max-width: 280px;
+    margin: 20px auto 0;
+    display: block;
+    padding: 12px;
+  }
+}
+
+/* ✅ Extra small devices (Phones <480px) */
+@media (max-width: 480px) {
+  .about-right h1 {
+    font-size: 1.6rem;
+  }
+
+  .about-right p {
+    font-size: 0.9rem;
+  }
+
+  .book-now-btn {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 10px;
   }
 }

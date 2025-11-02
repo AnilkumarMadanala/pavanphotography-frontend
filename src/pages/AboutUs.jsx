@@ -18,7 +18,7 @@ function AboutUs() {
           our lens transforms fleeting instants into lifelong treasures.
         </p>
         <p>
-          Based in <em>Vizag</em>, our dedicated team brings creativity and 
+          Based in <em>Vizianagaram</em>, our dedicated team brings creativity and 
           professionalism to every shoot — ensuring your special day is 
           preserved beautifully and authentically.
         </p>

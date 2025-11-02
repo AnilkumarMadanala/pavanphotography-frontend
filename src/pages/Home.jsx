@@ -50,7 +50,7 @@ function Home() {
         </video>
 
         <div className="overlay">
-          <h1>Welcome to Pavan Photography</h1>
+          <h1>Pavan Photography</h1>
           <p>Capturing moments that last a lifetime ✨</p>
         </div>
       </section>
@@ -70,7 +70,7 @@ function Home() {
             our lens transforms fleeting instants into lifelong treasures.
           </p>
           <p>
-            Based in <em>Vizag</em>, our dedicated team brings creativity and 
+            Based in <em>Vizianagaram</em>, our dedicated team brings creativity and 
             professionalism to every shoot — ensuring your special day is 
             preserved beautifully and authentically.
           </p>
@@ -86,13 +86,14 @@ function Home() {
 
       {/* ===== RECENT CLICKS SECTION ===== */}
       <section className="home-gallery-section">
-        <h2>Recent Clicks 📸</h2>
-        <div className="home-gallery">
-          {recentImages.map((src, index) => (
-            <img key={index} src={src} alt={`Recent Click ${index + 1}`} />
-          ))}
-        </div>
-      </section>
+  <h2>Recent Clicks 📸</h2>
+  <div className="home-gallery">
+    {recentImages.map((src, index) => (
+      <img key={index} src={src} alt={`Recent Click ${index + 1}`} />
+    ))}
+  </div>
+</section>
+
 
       {/* ===== HAPPY CUSTOMERS & REVIEWS ===== */}
       {/* ===============================
