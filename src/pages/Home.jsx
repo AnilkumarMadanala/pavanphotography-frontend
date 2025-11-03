@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/Home.css";
 import "../styles/AboutUs.css";
 import Contact from "./Contact";
@@ -32,6 +33,7 @@ import housewarming11 from "../assets/housewarming/house11.jpg";
 import housewarming12 from "../assets/housewarming/house12.jpg";
 
 function Home() {
+  const navigate = useNavigate();
   const recentImages = [
     wedding1, wedding2, wedding3, wedding4, wedding5,
     wedding6, wedding7, wedding8, wedding9, wedding10,
@@ -39,6 +41,7 @@ function Home() {
     housewarming5, housewarming6, housewarming7, housewarming8,
     housewarming9, housewarming10, housewarming11, housewarming12,
   ];
+  
 
   return (
     <div className="home-wrapper">
