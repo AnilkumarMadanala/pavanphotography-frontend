@@ -76,11 +76,12 @@ function Home() {
           </p>
 
           <button
-            className="book-now-btn"
-            onClick={() => (window.location.href = "/booknow")}
-          >
-            Book Your Session 📸
-          </button>
+  className="book-now-btn"
+  onClick={() => navigate("/booknow")}
+>
+  Book Your Session 📸
+</button>
+
         </div>
       </section>
 

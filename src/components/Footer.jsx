@@ -31,20 +31,13 @@ const Footer = () => {
             </p>
           </div>
 
-          <div className="footer-buttons">
-            <button
-              className="footer-btn book-btn"
-              onClick={() => (window.location.href = "/booknow")}
-            >
-              Book Now
-            </button>
-            <button
-              className="footer-btn call-btn"
-              onClick={() => (window.location.href = "tel:+918008644932")}
-            >
-              Call Now
-            </button>
-          </div>
+        <button
+  className="footer-btn book-btn"
+  onClick={() => navigate("/booknow")}
+>
+  Book Now
+</button>
+
         </div>
 
         {/* Middle: Quick Links */}
