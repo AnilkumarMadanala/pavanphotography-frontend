@@ -6,14 +6,18 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  // ✅ Close menu when scrolling
+  // ✅ Prevent auto-closing menu while it’s open
   useEffect(() => {
-    const handleScroll = () => setMenuOpen(false);
+    const handleScroll = () => {
+      if (!menuOpen) {
+        // Only handle logic when menu is closed
+        setDropdownOpen(false);
+      }
+    };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [menuOpen]);
 
-  // ✅ Close menu when clicking any link
   const handleLinkClick = () => {
     setMenuOpen(false);
     setDropdownOpen(false);
