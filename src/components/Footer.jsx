@@ -9,8 +9,7 @@ import {
   FaPhoneAlt,
   FaEnvelope,
 } from "react-icons/fa";
-import { useNavigate } from "react-router-dom"; // ✅ Import navigation hook
-
+import { Link, useNavigate } from "react-router-dom";
 const Footer = () => {
   const navigate = useNavigate(); // ✅ Initialize navigation
 
@@ -49,26 +48,17 @@ const Footer = () => {
         </div>
 
         {/* Middle: Quick Links */}
-        <div className="footer-links">
-          <h3>Quick Links</h3>
-          <ul>
-            <li>
-              <a href="/">Home</a>
-            </li>
-            <li>
-              <a href="/aboutus">About Us</a>
-            </li>
-            <li>
-              <a href="/gallery/wedding">Gallery</a>
-            </li>
-            <li>
-              <a href="/booknow">Book Now</a>
-            </li>
-            <li>
-              <a href="/contact">Contact</a>
-            </li>
-          </ul>
-        </div>
+       <div className="footer-links">
+  <h3>Quick Links</h3>
+  <ul>
+    <li><Link to="/">Home</Link></li>
+    <li><Link to="/aboutus">About Us</Link></li>
+    <li><Link to="/gallery/wedding">Gallery</Link></li>
+    <li><Link to="/booknow">Book Now</Link></li>
+    <li><Link to="/contact">Contact</Link></li>
+  </ul>
+</div>
+
 
         {/* Right: Social Media */}
         <div className="footer-social">
