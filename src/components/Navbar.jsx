@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
+import logo from "../assets/logo/logo3.webp"; 
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,8 +27,11 @@ function Navbar() {
   return (
     <nav className="navbar">
       {/* LEFT */}
-      <div className="navbar-left">
-        <h2>Pavan Photography</h2>
+       <div className="navbar-left">
+        <Link to="/" className="logo-link" onClick={handleLinkClick}>
+          <img src={logo} alt="Pavan Photography Logo" className="logo-img" />
+          <h2>Pavan Photography</h2>
+        </Link>
       </div>
 
       {/* MENU TOGGLE (MOBILE) */}
