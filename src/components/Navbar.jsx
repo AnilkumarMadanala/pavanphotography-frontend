@@ -1,10 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  // ✅ Close menu when scrolling
+  useEffect(() => {
+    const handleScroll = () => setMenuOpen(false);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // ✅ Close menu when clicking any link
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+    setDropdownOpen(false);
+  };
 
   return (
     <nav className="navbar">
@@ -18,14 +31,14 @@ function Navbar() {
         className="menu-toggle"
         onClick={() => setMenuOpen(!menuOpen)}
       >
-        ☰
+        {menuOpen ? "×" : "☰"}
       </button>
 
       {/* CENTER */}
       <div className="navbar-center">
         <ul className={menuOpen ? "active" : ""}>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/aboutus">About Us</Link></li>
+          <li><Link to="/" onClick={handleLinkClick}>Home</Link></li>
+          <li><Link to="/aboutus" onClick={handleLinkClick}>About Us</Link></li>
 
           {/* Dropdown for Recent Gallery */}
           <li
@@ -36,22 +49,22 @@ function Navbar() {
             <span className="dropdown-title">Recent Gallery ▾</span>
             {dropdownOpen && (
               <ul className="dropdown-menu">
-                <li><Link to="/gallery/wedding">Wedding</Link></li>
-                <li><Link to="/gallery/halfsaree">Half Saree</Link></li>
-                <li><Link to="/gallery/birthday">Birthday</Link></li>
-                <li><Link to="/gallery/babyshower">Baby Shower</Link></li>
-                <li><Link to="/gallery/engagement">Engagement</Link></li>
-                <li><Link to="/gallery/housewarming">House Warming</Link></li>
-                <li><Link to="/gallery/annualday">Annual Day</Link></li>
-                <li><Link to="/gallery/specialevents">Special Events</Link></li>
+                <li><Link to="/gallery/wedding" onClick={handleLinkClick}>Wedding</Link></li>
+                <li><Link to="/gallery/halfsaree" onClick={handleLinkClick}>Half Saree</Link></li>
+                <li><Link to="/gallery/birthday" onClick={handleLinkClick}>Birthday</Link></li>
+                <li><Link to="/gallery/babyshower" onClick={handleLinkClick}>Baby Shower</Link></li>
+                <li><Link to="/gallery/engagement" onClick={handleLinkClick}>Engagement</Link></li>
+                <li><Link to="/gallery/housewarming" onClick={handleLinkClick}>House Warming</Link></li>
+                <li><Link to="/gallery/annualday" onClick={handleLinkClick}>Annual Day</Link></li>
+                <li><Link to="/gallery/specialevents" onClick={handleLinkClick}>Special Events</Link></li>
               </ul>
             )}
           </li>
-                    <li><Link to="/contact">Contact</Link></li>
 
+          <li><Link to="/contact" onClick={handleLinkClick}>Contact</Link></li>
 
           <li>
-            <Link to="/booknow">
+            <Link to="/booknow" onClick={handleLinkClick}>
               <button className="call-now">Book Now</button>
             </Link>
           </li>
