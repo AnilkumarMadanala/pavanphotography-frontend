@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
@@ -7,10 +7,12 @@ import BookNow from "./pages/BookNow";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
-    <Router>
+   <BrowserRouter>
+      <ScrollToTop />
       <Navbar />
 
       <Routes>
@@ -33,7 +35,7 @@ function App() {
       </Routes>
 
       <Footer />
-    </Router>
+      </BrowserRouter>
   );
 }
 

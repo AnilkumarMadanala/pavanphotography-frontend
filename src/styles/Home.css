@@ -168,7 +168,7 @@
   letter-spacing: 1px;
 }
 
-/* Uniform Grid */
+/* Desktop Grid */
 .gallery-grid,
 .home-gallery {
   display: grid;
@@ -211,33 +211,52 @@
   }
 }
 
-/* ✅ Mobile Responsive Gallery (2 Rows Grid Version) */
+/* ✅ Mobile Responsive (Smart Dynamic Layout) */
+/* ✅ Mobile Responsive: One Image Per Row */
 @media (max-width: 768px) {
-  .gallery-grid,
-  .home-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 images per row */
-    grid-auto-rows: 160px; /* image height */
-    gap: 12px;
-    justify-content: center;
-    align-items: center;
-    padding: 0 10px;
+  .home-gallery-section {
+    padding: 40px 10px;
   }
 
-  .gallery-grid img,
+  .home-gallery {
+    display: flex;
+    flex-direction: column; /* one image per row */
+    gap: 12px;
+    width: 100%;
+  }
+
+  .home-gallery-item {
+    width: 100%;
+  }
+
   .home-gallery img {
     width: 100%;
-    height: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5; /* taller portrait layout */
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
   }
 
-  .gallery-section h2,
   .home-gallery-section h2 {
     font-size: 1.4rem;
     margin-bottom: 25px;
   }
 }
+
+/* ✅ Very Small Phones (<= 480px) */
+@media (max-width: 480px) {
+  .home-gallery img {
+    aspect-ratio: 3 / 4; /* slightly taller for smaller screens */
+    border-radius: 6px;
+  }
+
+  .home-gallery-section h2 {
+    font-size: 1.2rem;
+  }
+}
+
+
 
 /* ==============================
    HAPPY CUSTOMERS / REVIEWS

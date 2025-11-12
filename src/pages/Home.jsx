@@ -89,14 +89,21 @@ function Home() {
       </section>
 
       {/* ===== RECENT CLICKS SECTION ===== */}
-      <section className="home-gallery-section">
-  <h2>Recent Clicks 📸</h2>
-  <div className="home-gallery">
-    {recentImages.map((src, index) => (
-      <img key={index} src={src} alt={`Recent Click ${index + 1}`} />
-    ))}
-  </div>
-</section>
+  <section className="home-gallery-section">
+      <h2>Recent Clicks 📸</h2>
+      <div className="home-gallery">
+        {recentImages.map((src, index) => (
+          <div className="home-gallery-item" key={index}>
+            <img
+              src={src}
+              alt={`Recent Click ${index + 1}`}
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        ))}
+      </div>
+    </section>
 
 
       {/* ===== HAPPY CUSTOMERS & REVIEWS ===== */}
