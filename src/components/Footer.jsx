@@ -19,7 +19,7 @@ const Footer = () => {
         {/* Left: Brand & Contact Info */}
         <div className="footer-brand">
           <h2>Pavan Photography</h2>
-          <p>Capturing moments, creating memories.</p>
+          <p>Forever Memories, Captured With Love.</p>
 
           <div className="footer-contact">
             <p>
@@ -65,14 +65,14 @@ const Footer = () => {
           <h3>Follow Us</h3>
           <div className="social-icons">
             <a
-              href="https://www.instagram.com/"
+              href="https://wa.me/918008644932"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaInstagram />
             </a>
             <a
-              href="https://www.facebook.com/"
+              href="https://wa.me/918008644932"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -86,7 +86,7 @@ const Footer = () => {
               <FaWhatsapp />
             </a>
             <a
-              href="https://www.youtube.com/"
+              href="https://wa.me/918008644932"
               target="_blank"
               rel="noopener noreferrer"
             >

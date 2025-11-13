@@ -1,10 +1,19 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate, } from "react-router-dom";
 import "../styles/Home.css";
 import "../styles/AboutUs.css";
 import Contact from "./Contact";
 // About image
 import aboutImage from "../assets/pavanimg.jpg";
+
+// Category cover images
+import weddingCover from "../assets/wedding/wedding7.jpeg";
+import halfsareeCover from "../assets/halfsaree/halfsaree1.webp";
+import housewarmingCover from "../assets/housewarming/house10.jpg";
+import birthdayCover from "../assets/birthday/birthday1.jpg";
+import babyshowerCover from "../assets/babyshower/babyshower1.jpg";
+import engagementCover from "../assets/engagement/engagement1.jpg";
+
 
 // Wedding Images
 import wedding1 from "../assets/wedding/wedding1.jpg";
@@ -31,20 +40,76 @@ import housewarming9 from "../assets/housewarming/house9.jpg";
 import housewarming10 from "../assets/housewarming/house10.jpg";
 import housewarming11 from "../assets/housewarming/house11.jpg";
 import housewarming12 from "../assets/housewarming/house12.jpg";
+import babyshower1 from "../assets/babyshower/babyshower1.jpg";
+import birthday1 from "../assets/birthday/birthday1.jpg";
+import halfsaree1 from "../assets/halfsaree/halfsaree1.webp";
 
 function Home() {
   const navigate = useNavigate();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+
+    const categories = [
+    { title: "Wedding", img: weddingCover },
+    { title: "Half Saree", img: halfsareeCover },
+    { title: "Housewarming", img: housewarmingCover },
+    { title: "Birthday", img: birthdayCover },
+    { title: "Baby Shower", img: babyshowerCover },
+    { title: "Engagement", img: engagementCover },
+  ];
+   useEffect(() => {
+    if (paused) return;
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % categories.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [paused, categories.length]);
+
   const recentImages = [
     wedding1, wedding2, wedding3, wedding4, wedding5,
     wedding6, wedding7, wedding8, wedding9, wedding10,
     housewarming1, housewarming2, housewarming3, housewarming4,
     housewarming5, housewarming6, housewarming7, housewarming8,
-    housewarming9, housewarming10, housewarming11, housewarming12,
+    housewarming9, housewarming10, housewarming11, housewarming12,babyshower1,birthday1,halfsaree1
   ];
   
 
   return (
     <div className="home-wrapper">
+ <section className="category-section">
+        <h2>Our Specialties ✨</h2>
+
+        {/* Desktop grid */}
+        <div className="category-grid desktop-view">
+          {categories.map((cat, index) => (
+            <div className="category-card" key={index}>
+              <img src={cat.img} alt={cat.title} loading="lazy" />
+              <div className="category-overlay">
+                <h3>{cat.title}</h3>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile carousel */}
+        <div className="mobile-carousel">
+          <div
+            className="carousel-container"
+            onTouchStart={() => setPaused(true)}
+            onClick={() => setPaused((prev) => !prev)}
+          >
+            <img
+              src={categories[currentIndex].img}
+              alt={categories[currentIndex].title}
+              className="carousel-image"
+            />
+            <div className="carousel-overlay">
+              <h3>{categories[currentIndex].title}</h3>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* ===== HERO VIDEO SECTION ===== */}
       <section className="hero-section">
         <video className="background-video" autoPlay loop muted playsInline>
@@ -54,7 +119,7 @@ function Home() {
 
         <div className="overlay">
           <h1>Pavan Photography</h1>
-          <p>Capturing moments that last a lifetime ✨</p>
+          <p>Forever Memories, Captured With Love </p>
         </div>
       </section>
 
@@ -122,7 +187,7 @@ function Home() {
       <p>Events Organized</p>
     </div>
     <div className="stat-box">
-      <h3>100+</h3>
+      <h3>140+</h3>
       <p>Happy Clients</p>
     </div>
     <div className="stat-box">
@@ -151,6 +216,21 @@ function Home() {
 <section id="contact-section">
         <Contact />
       </section>
+      {/* ✅ WhatsApp Floating Chat Button */}
+<a
+  href="https://wa.me/918008644932?text=Hi%20Pavan%20Photography!%20I%20would%20like%20to%20know%20more%20about%20your%20services."
+  className="whatsapp-float"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+    alt="WhatsApp"
+    className="whatsapp-icon"
+  />
+  <span className="whatsapp-text">Chat with us</span>
+</a>
+
     </div>
   );
 }
