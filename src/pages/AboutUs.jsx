@@ -30,6 +30,19 @@ function AboutUs() {
   Book Your Session 📸
 </button>
       </div>
+      <a
+  href="https://wa.me/918008644932?text=Hi%20Pavan%20Photography!%20I%20would%20like%20to%20know%20more%20about%20your%20services."
+  className="whatsapp-float"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+    alt="WhatsApp"
+    className="whatsapp-icon"
+  />
+  <span className="whatsapp-text">Chat with us</span>
+</a>
     </div>
   );
 }
